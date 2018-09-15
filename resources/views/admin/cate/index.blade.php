@@ -1,5 +1,7 @@
 @extends('layout.admin')
 
+@section('title', '分类列表')
+
 @section('content')
 <style type="text/css">
 	#pages li{
@@ -55,7 +57,7 @@
 	<div class="mws-panel-body no-padding">
 		<div id="DataTables_Table_1_wrapper" class="dataTables_wrapper" role="grid">
 			
-			<form action="/user/index">
+			<form action="/cates">
 				<div id="DataTables_Table_1_length" class="dataTables_length">
 					<label>
 						显示
@@ -129,8 +131,8 @@
 						</td>
 						
 						<td class=" ">
-							<a href="/cate/{{$v->id}}/edit" class="btn"><i class="icon-pencil"></i></a>
-							<form action="/cate/{{$v->id}}" style="display:inline" method="post">
+							<a href="/cates/{{$v->id}}/edit" class="btn"><i class="icon-pencil"></i></a>
+							<form action="/cates/{{$v->id}}" style="display:inline" method="post">
 								<input type="hidden" name="_method" value="DELETE">
 								{{csrf_field()}}
 								<button class="btn btn-warning"><i class="icon-remove-sign"></i></button>

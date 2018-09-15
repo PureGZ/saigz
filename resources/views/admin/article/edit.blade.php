@@ -24,7 +24,7 @@
 	@endif
 
     <div class="mws-panel-body no-padding">
-    	<form class="mws-form" action="{{url('/article/'.$info->id)}}" method="post" enctype="multipart/form-data">
+    	<form class="mws-form" action="{{url('/articles/'.$info->id)}}" method="post" enctype="multipart/form-data">
     		<div class="mws-form-inline">
     			<div class="mws-form-row">
     				<label class="mws-form-label">文章名</label>
@@ -70,11 +70,7 @@
                 </div>
     		</div>
             <script type="text/javascript">
-                var ue = UE.getEditor('editor',{
-                    toolbars: [
-                        ['fullscreen', 'source', 'undo', 'redo', 'bold','simpleupload']
-                    ]
-                });
+                var ue = UE.getEditor('editor');
             </script>
     		<div class="mws-button-row">
     			{{csrf_field()}}

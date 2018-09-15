@@ -2,7 +2,6 @@
 
 @section('title','标签修改')
 
-
 @section('content')
 <div class="mws-panel grid_8">
 	<div class="mws-panel-header">

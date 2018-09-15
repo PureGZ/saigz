@@ -25,3 +25,5 @@ Route::resource('cates', 'CateController');
 Route::resource('tags', 'TagController');
 // 文章管理
 Route::resource('articles', 'ArticleController');
+// 登录的页面显示
+Route::get('/login', 'LoginController@login');

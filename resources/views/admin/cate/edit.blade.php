@@ -1,11 +1,11 @@
 @extends('layout.admin')
 
-@section('title', '分类添加')
+@section('title', '分类修改')
 
 @section('content')
 <div class="mws-panel grid_8">
     <div class="mws-panel-header">
-        <span>分类添加</span>
+        <span>分类修改</span>
     </div>
     @if (count($errors) > 0)
     <div class="mws-form-message error">
@@ -17,7 +17,7 @@
     </div>
     @endif
     <div class="mws-panel-body no-padding">
-        <form class="mws-form" action="{{url('/cate/'.$info->id)}}" method="post" enctype="multipart/form-data">
+        <form class="mws-form" action="{{url('/cates/'.$info->id)}}" method="post" enctype="multipart/form-data">
             <div class="mws-form-inline">
                 <div class="mws-form-row">
                     <label class="mws-form-label">分类名称</label>
@@ -31,7 +31,9 @@
                         <select class="small" name="pid">
                             <option value="0">请选择</option>
                             @foreach($cates as $k=>$v)
-                            <option value="{{$v->id}}"  @if($v->id == $info['pid']) selected @endif>{{$v->name}}</option>
+                                <option value="{{$v->id}}"  @if($v->id == $info['pid']) selected @endif>
+                                    {{$v->name}}
+                                </option>
                             @endforeach
                         </select>
                     </div>

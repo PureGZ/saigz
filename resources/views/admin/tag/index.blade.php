@@ -1,5 +1,7 @@
 @extends('layout.admin')
 
+@section('title','标签列表')
+
 @section('content')
 <style type="text/css">
 	#pages li{

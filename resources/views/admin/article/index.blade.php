@@ -1,5 +1,7 @@
 @extends('layout.admin')
 
+@section('title', '文章列表')
+
 @section('content')
 <style type="text/css">
 	#pages li{
@@ -93,7 +95,7 @@
 					<tr role="row">
 						<th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
 						rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending"
-						style="width: 160px;">
+						style="width: 30px;">
 							ID
 						</th>
 						<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
@@ -122,16 +124,22 @@
 					@foreach($articles as $k=>$v)
 					<tr class="@if($k % 2 == 0)  even @else odd @endif ">
 						<td class=" sorting_1">
-							{{$v->id}}
+							<center>
+								{{$v->id}}	
+							</center>
 						</td>
 						<td class=" ">
-							{{$v->title}}
+							<center>
+								{{$v->title}}
+							</center>
 						</td>
 						<td class=" ">
 							{{$v->cate->name or '无分类'}}
 						</td>
 						<td class=" ">
-							<img src="{{$v->img}}" width="50" alt="">
+							<center>
+								<img src="{{$v->img}}" width="100" alt="">
+							</center>
 						</td>
 						
 						<td class=" ">

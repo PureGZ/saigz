@@ -112,7 +112,6 @@ class ArticleController extends Controller
         $article->title = $request->input('title');
         $article->content = $request->input('content');
         $article->cate_id = $request->input('cate_id');
-        $article->user_id = 1;
         // 检测是否有文件上传
         if ($request->hasFile('img')) {
             // 文件的存放目录
@@ -129,10 +128,10 @@ class ArticleController extends Controller
         if ($article->save()) {
             // 将tag数据存入中间表Article_tag
             if ($article->tag()->sync($request->tag_id)) {
-                return redirect('/articles')->with('info', '文章更新成功！');
+                return redirect('/articles')->with('info', '文章修改成功！');
             }        
         } else {
-            return redirect()->back()->with('info', '文章更新失败！');
+            return redirect()->back()->with('info', '文章修改失败！');
         } 
     }
 
