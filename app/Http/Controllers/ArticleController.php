@@ -74,7 +74,7 @@ class ArticleController extends Controller
         } 
     }
 
-    /**/
+    /*显示文章详情页面*/
     public function show($id)
     {
         // 读取文章信息
